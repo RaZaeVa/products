@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Чтобы содержимое было по верхнему краю */
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px; /* Ограничение ширины страницы */
+    margin: 0 auto; /* Центрирование всего контента */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Ограничение ширины карусели */
+    overflow: hidden;
+    margin: 0 auto; /* Центрирование карусели */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.page {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Ограничение ширины таблицы */
+    margin: 0 auto; /* Центрирование таблицы */
+    box-sizing: border-box; /* Убедитесь, что padding не выходит за пределы */
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.product-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+button {
+    position: fixed; /* Фиксированная позиция */
+    top: 50%; /* По вертикали всегда по центру окна */
+    transform: translateY(-50%); /* Выравнивание по центру */
+    background-color: #212122be;
+    color: white;
+    border: none;
+    padding: 16px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10; /* Убедимся, что кнопки выше остальных элементов */
+}
+
+button#prev-button {
+    left: 10px; /* Отступ от левого края */
+}
+
+button#next-button {
+    right: 10px; /* Отступ от правого края */
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Планшеты и экраны шириной до 1024px */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px 5px;
+        font-size: 14px;
+    }
+}
+
+/* Мобильные телефоны шириной до 768px */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .product-card img {
+        width: 70px;
+    }
+
+    .product-info h3 {
+        font-size: 14px;
+    }
+
+    .product-info p {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+}
+
+/* Очень маленькие экраны, шириной до 480px */
+@media (max-width: 480px) {
+    .product-grid {
+        gap: 5px;
+    }
+
+    .product-card {
+        padding: 8px;
+    }
+
+    .product-card img {
+        width: 60px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .product-info p {
+        font-size: 10px;
+    }
+
+    button {
+        padding: 8px 4px;
+        font-size: 10px;
+    }
+}
